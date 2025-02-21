@@ -106,7 +106,7 @@ namespace GitLabApiClient
             var queryOptions = new JobQueryOptions();
             options?.Invoke(queryOptions);
 
-            var url = _jobQueryBuilder.Build($"projects/{projectId}/jobs", queryOptions);
+            string url = _jobQueryBuilder.Build($"projects/{projectId}/jobs", queryOptions);
             return await _httpFacade.GetPagedList<Job>(url);
         }
 
@@ -334,6 +334,17 @@ namespace GitLabApiClient
         public async Task<ImportStatus> GetImportStatusAsync(ProjectId projectId)
         {
             return await _httpFacade.Get<ImportStatus>($"projects/{projectId}/import");
+        }
+
+
+        /// <summary>
+        /// Retrieve approval rules by projectId.
+        /// </summary>
+        /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
+        /// <returns>List of Approval Rules</returns>
+        public async Task<IList<ApprovalRule>> GetApprovalRulesAsync(ProjectId projectId)
+        {
+            return await _httpFacade.Get<IList<ApprovalRule>>($"projects/{projectId}/approval_rules");
         }
     }
 }
