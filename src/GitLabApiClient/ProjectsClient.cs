@@ -6,6 +6,7 @@ using GitLabApiClient.Internal.Http;
 using GitLabApiClient.Internal.Paths;
 using GitLabApiClient.Internal.Queries;
 using GitLabApiClient.Internal.Utilities;
+using GitLabApiClient.Models;
 using GitLabApiClient.Models.Job.Requests;
 using GitLabApiClient.Models.Job.Responses;
 using GitLabApiClient.Models.Milestones.Requests;
@@ -67,6 +68,13 @@ namespace GitLabApiClient
         /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
         public async Task<IList<User>> GetUsersAsync(ProjectId projectId) =>
             await _httpFacade.GetPagedList<User>($"projects/{projectId}/users");
+
+        /// <summary>
+        /// Get the members list of a project.
+        /// </summary>
+        /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
+        public async Task<IList<Member>> GetMembersAsync(ProjectId projectId) =>
+            await _httpFacade.GetPagedList<Member>($"projects/{projectId}/members");
 
         /// <summary>
         /// Retrieves project variables by its id.
