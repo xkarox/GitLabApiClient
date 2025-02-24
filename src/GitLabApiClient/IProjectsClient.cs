@@ -213,5 +213,13 @@ namespace GitLabApiClient
         /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
         /// <returns>Status of the import</returns>
         Task<ImportStatus> GetImportStatusAsync(ProjectId projectId);
+
+
+        /// <summary>
+        /// Retrieve approval rules by projectId.
+        /// </summary>
+        /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
+        /// <returns>List of Approval Rules</returns>
+        Task<IList<ApprovalRule>> GetApprovalRulesAsync(ProjectId projectId);
     }
 }
