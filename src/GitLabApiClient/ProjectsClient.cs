@@ -354,5 +354,21 @@ namespace GitLabApiClient
         {
             return await _httpFacade.Get<IList<ApprovalRule>>($"projects/{projectId}/approval_rules");
         }
+
+        /// <summary>
+        /// Retrieve pipeline schedules by projectId.
+        /// </summary>
+        /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
+        /// <returns>List of Pipeline Schedules</returns>
+        public async Task<IList<PipelineSchedule>> GetPipelineSchedulesAsync(ProjectId projectId) =>
+            await _httpFacade.GetPagedList<PipelineSchedule>($"projects/{projectId}/pipeline_schedules");
+
+        /// <summary>
+        /// Retrieve protected tags by projectId.
+        /// </summary>
+        /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
+        /// <returns>List of Protected Tags</returns>
+        public async Task<IList<ProtectedTag>> GetProtectedTags(ProjectId projectId) =>
+            await _httpFacade.GetPagedList<ProtectedTag>($"projects/{projectId}/protected_tags");
     }
 }

@@ -228,5 +228,20 @@ namespace GitLabApiClient
         /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
         /// <returns>List of Approval Rules</returns>
         Task<IList<ApprovalRule>> GetApprovalRulesAsync(ProjectId projectId);
+
+        /// <summary>
+        /// Retrieve pipeline schedules by projectId.
+        /// </summary>
+        /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
+        /// <returns>List of Pipeline Schedules</returns>
+        Task<IList<PipelineSchedule>> GetPipelineSchedulesAsync(ProjectId projectId);
+
+
+        /// <summary>
+        /// Retrieve protected tags by projectId.
+        /// </summary>
+        /// <param name="projectId">The ID, path or <see cref="Project"/> of the project.</param>
+        /// <returns>List of Protected Tags</returns>
+        Task<IList<ProtectedTag>> GetProtectedTags(ProjectId projectId);
     }
 }
