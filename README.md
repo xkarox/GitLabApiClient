@@ -14,6 +14,14 @@ GitLabApiClient is a .NET rest client for [GitLab API v4](https://docs.gitlab.co
 - Simple and natural to use.
 - Handles URL encoding for you
 
+## Added support for 
+
+- Members (by project id) 
+- Pipeline Schedules (by project id) 
+- Protected Tags (by project id) 
+- Create Access Levels 
+- Approval Rules (by project id) 
+
 ## Quick start
 
 ### Authenticate
