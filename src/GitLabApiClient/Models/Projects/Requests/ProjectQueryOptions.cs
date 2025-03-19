@@ -7,7 +7,7 @@ namespace GitLabApiClient.Models.Projects.Requests
     /// </summary>
     public sealed class ProjectQueryOptions
     {
-        internal ProjectQueryOptions() { }
+        public ProjectQueryOptions() { }
 
         /// <summary>
         /// The ID or username of the user

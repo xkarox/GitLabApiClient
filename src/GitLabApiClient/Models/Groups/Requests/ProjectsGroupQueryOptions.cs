@@ -5,7 +5,7 @@ namespace GitLabApiClient.Models.Groups.Requests
     /// </summary>
     public class ProjectsGroupQueryOptions
     {
-        internal ProjectsGroupQueryOptions()
+        public ProjectsGroupQueryOptions()
         {
         }
 

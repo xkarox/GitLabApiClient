@@ -125,5 +125,8 @@ namespace GitLabApiClient.Models.Projects.Responses
 
         [JsonProperty("merge_method")]
         public string MergeMethod { get; set; }
+
+        [JsonProperty("squash_option")]
+        public string SquashOption { get; set; }
     }
 }
